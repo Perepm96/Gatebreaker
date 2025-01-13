@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using UnityEngine.SceneManagement;
 
 
 public class GameController : MonoBehaviour
@@ -9,11 +11,11 @@ public class GameController : MonoBehaviour
     public static GameController instance;
 
     //Player
-    private static int currentHealth = 10;
-    private static int maxHealth = 10;
-    private static int currentEnergy = 100;
-    private static int maxEnergy = 100;
-    private static float energyregen = 2f; 
+    private static int currentHealth = 100;
+    private static int maxHealth = 100;
+    private static int currentEnergy = 150;
+    private static int maxEnergy = 150;
+    private static float energyregen = 5f; 
     private static float moveSpeed = 5f;
 
     //Slash
@@ -23,6 +25,10 @@ public class GameController : MonoBehaviour
 
     //Projectile
     private static float projectileSize = 0.5f;
+
+    // Score Multiplier
+
+    public static float scoreMultiplier = 1.0f;
 
 
 
@@ -76,10 +82,25 @@ public class GameController : MonoBehaviour
 
     public static void HealPlayer(int healAmount)
     {
-        currentHealth = Mathf.Min(maxHealth, currentHealth + healAmount);
+        maxHealth += healAmount;
+        currentHealth = Mathf.Min(maxHealth, currentHealth + (healAmount*2));
+    }
+    public void IncreaseSlashSize(float amount)
+    {
+        slashSize += amount;
+    }
+    public void IncreaseSlashSpeed(float amount)
+    {
+        slashSpeed += amount;
+    }
+    public void IncreaseSpeed(float amount)
+    {
+        moveSpeed += amount;
     }
     private static void KillPlayer()
     {
-        // TO DO
+        Debug.Log("Player has died!");
+       
+        SceneManager.LoadScene(0); 
     }
 }

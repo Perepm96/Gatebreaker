@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1853094751930085581}
   - component: {fileID: 6912588199634866277}
   - component: {fileID: 8090708330966619649}
+  - component: {fileID: 4867862584331939898}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
@@ -64,7 +65,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -121,9 +122,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2132216017
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2572365745140355499, guid: 931f5859b9587494aa3641def6ca9792, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,12 +149,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 1
-  currState: 1
+  currState: 0
   range: 15
-  speed: 2
-  attackRange: 10
-  health: 10
-  damage: 3
-  coolDown: 2
+  baseSpeed: 1
+  speed: 0
+  baseAttackRange: 10
+  attackRange: 0
+  baseHealth: 10
+  health: 0
+  baseDamage: 3
+  damage: 0
   projectilePrefab: {fileID: 394266618781192912, guid: 18355df6a0abf8e4c972f6acd79203e5, type: 3}
+  baseProjectileSpeed: 2.5
   projectileSpeed: 0
+  notInRoom: 0
+  coolDown: 2
+--- !u!50 &4867862584331939898
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134605442839859031}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4

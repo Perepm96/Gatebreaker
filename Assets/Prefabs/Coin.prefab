@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2132216017
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5786908087319744630, guid: 04293a6416290f147b5189b1fdf318df, type: 3}
   m_Color: {r: 0.745283, g: 0.5249331, b: 0.1511659, a: 1}
   m_FlipX: 0
@@ -137,3 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8904ed93b23b446aca4be12c0813ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item:
+    name: Coin
+    description: Gives +1 Coin
+    itemImage: {fileID: -5786908087319744630, guid: 04293a6416290f147b5189b1fdf318df, type: 3}
+  healthChange: 0
+  moveSpeedChange: 0
+  attackSpeedChange: 0
+  bulletSizeChange: 0

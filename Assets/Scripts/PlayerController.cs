@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
     public float energyRegenRate;
     private float lastEnergyRegenTime;
 
-    
-
 
     void Start()
     {
@@ -68,7 +66,7 @@ public class PlayerController : MonoBehaviour
         FlipSprite(horizontal);
 
 
-        collectedText.text = "Coins: " + collectedAmount;
+        collectedText.text = "Objectes: " + collectedAmount;
         if (Time.time > lastSlash + slashRate) 
         {
             RegenerateEnergy();
@@ -95,11 +93,6 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(slashVelocity.y, slashVelocity.x) * Mathf.Rad2Deg;
             slash.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
-    }
-
-    public void IncreaseSlashSize(float amount)
-    {
-        size += amount; 
     }
     void RegenerateEnergy()
     {

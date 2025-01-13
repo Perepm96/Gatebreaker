@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Slash
+  - Wall
+  - Obstacle
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -43,8 +46,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Front
+  - name: Wall
     uniqueID: 2307307357
+    locked: 0
+  - name: Door
+    uniqueID: 3476363049
+    locked: 0
+  - name: Player
+    uniqueID: 1924066685
+    locked: 0
+  - name: Entity
+    uniqueID: 2162751279
     locked: 0
   m_RenderingLayers:
   - Default

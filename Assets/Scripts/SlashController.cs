@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class SlashController : MonoBehaviour
 {
-
     public float lifeTime;
     public bool isEnemyBullet = false;
 
     private Vector2 lastPos;
     private Vector2 curPos;
     private Vector2 playerPos;
+
+    public int damage = 10; // Dany que el Slash infligeix
+
     void Start()
     {
         StartCoroutine(coroutineA());
@@ -19,7 +21,6 @@ public class SlashController : MonoBehaviour
             transform.localScale = new Vector2(GameController.SlashSize, GameController.SlashSize);
         }
     }
-
 
     void Update()
     {
@@ -34,27 +35,43 @@ public class SlashController : MonoBehaviour
             lastPos = curPos;
         }
     }
+
     public void GetPlayer(Transform player)
     {
         playerPos = player.position;
     }
+
     IEnumerator coroutineA()
     {
         yield return new WaitForSeconds(lifeTime);
         Destroy(gameObject);
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Enemy" && !isEnemyBullet)
+        if (col.CompareTag("Enemy") || col.CompareTag("Boss"))
         {
-            col.gameObject.GetComponent<EnemyController>().Death();
-            Destroy(gameObject);
-        }
+            EnemyController enemy = col.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                // Crida FlashRed per canviar el color a vermell
+                enemy.FlashRed();
+                // Infligeix dany a l'enemic
+                enemy.TakeDamage(damage);
+            }
 
-        if (col.tag == "Player" && isEnemyBullet)
-        {
-            GameController.DamagePlayer(1);
+            // Elimina el Slash després de col·lidir
             Destroy(gameObject);
         }
+        /*else if (col.CompareTag("Wall") || col.CompareTag("Obstacle"))
+        {
+            // Destrueix el projectil si col·lisiona amb una paret o obstacle
+            Debug.Log($"Projectile destroyed upon hitting: {col.name}");
+            Destroy(gameObject);
+        }*/
+    }
+    public void IncreaseAttack(int amount)
+    {
+        damage += amount;
     }
 }

@@ -76,11 +76,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2132216017
+  m_SortingLayer: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 368543389579951487, guid: 2d28ba2ccb19eec459b9acef8cc786d1, type: 3}
-  m_Color: {r: 0.14960839, g: 0.7735849, b: 0.21383776, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -115,8 +115,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!61 &6587304098532402466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -176,12 +176,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
-  currState: 1
+  currState: 0
   range: 10
-  speed: 3
-  attackRange: 1
-  health: 5
-  damage: 1
-  coolDown: 2
+  baseSpeed: 1
+  speed: 0
+  baseAttackRange: 1
+  attackRange: 0
+  baseHealth: 10
+  health: 0
+  baseDamage: 1
+  damage: 0
   projectilePrefab: {fileID: 394266618781192912, guid: 18355df6a0abf8e4c972f6acd79203e5, type: 3}
+  baseProjectileSpeed: 0
   projectileSpeed: 0
+  notInRoom: 0
+  coolDown: 2

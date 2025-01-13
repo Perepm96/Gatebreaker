@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2132216017
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -6939695964637348897, guid: c268f44e6f172314b9543161e67385d5, type: 3}
   m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be473a865ea7fc24da2875b9fdc0c1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.2
+  lifeTime: 0.8
   isEnemyBullet: 0
+  damage: 10
 --- !u!61 &5903959832821273447
 BoxCollider2D:
   m_ObjectHideFlags: 0

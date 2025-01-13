@@ -7,6 +7,7 @@ public class UIController : MonoBehaviour
 {
     public GameObject lifeContainer;
     private float fillValue;
+    public Text hpText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,5 +20,6 @@ public class UIController : MonoBehaviour
         fillValue = (int)GameController.CurrentHealth;
         fillValue = fillValue / GameController.MaxHealth;
         lifeContainer.GetComponent<Image>().fillAmount = fillValue;
+        hpText.text = GameController.CurrentHealth+"/"+GameController.MaxHealth;
     }
 }
