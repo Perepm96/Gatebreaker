@@ -10,6 +10,6 @@ Gatebreaker és un prototip de videojoc de tipus roguelike, desenvolupat com a p
 No dubtis a donar-li un cop d'ull i a jugar-hi una estona! 😊
 
 
-# Pròxima actualització (20/10/25)
+# Pròxima actualització (30/10/25)
 - Correcció d’errors (velocitat dels enemics, interfície d’usuari)
 - Noves animacions de moviment per el jugador
